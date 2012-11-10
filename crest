@@ -10,7 +10,7 @@ def set_secure(val):
 parser = argparse.ArgumentParser(description="An interactive hypermedia shell on top of curl")
 
 parser.add_argument('-a', '--accept',
-    metavar='TYPE',
+    metavar='<type>',
     help='Set the default Accept header. (defaults to \'application/json\')',
     default='application/json')
 
@@ -19,11 +19,25 @@ parser.add_argument('-s', '--secure',
     action='store_const',
     const='opt_secure_flag')
 
-parser.add_argument('-t', '--content-type', metavar='TYPE',
+parser.add_argument('-t', '--content-type',
+    metavar='<type>',
     help='Set the default Content-Type header. Defaults to application/x-www-urlencoded',
     default='application/x-www-urlencoded')
 
+parser.add_argument('-H',
+    metavar='<header>',
+    help='Add a generic default header.  The header provided here must be \
+        complete, in contrast with the types provided to -a and -t.')
+
+parser.add_argument('-d',
+    metavar='<data>',
+    help='Send <data> with each request')
+
+parser.add_argument('-i',
+    help='Print output in the format of curl -i',
+    action='store_const',
+    const='opt_curl_i_flag')
+
 parser.print_help()
-#parser.add_argument('base_url', metavar='<base_url>', type=
 
 
