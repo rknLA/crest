@@ -62,9 +62,9 @@ they are unset, or until the shell is terminated.
 
 **Valid options are:**
 ```
--a, --accept <mime>         # set an HTTP Accept header for <mime>
--s, --secure                # use https
--t, --content-type <type>   # specifies the Content-Type of the request body by setting the HTTP Content-Type header
+-a/--accept <mime>         # set an HTTP Accept header for <mime>
+-s/--secure                # use https
+-t/--content-type <type>   # specifies the Content-Type of the request body by setting the HTTP Content-Type header
 -H <header>                 # use this HTTP header for all subsequent requests.  Same as curl -H
 -d <data>                   # send request with <data>.  Same as curl -d
 -v                          # verbose. Same as curl -v.  Defaults to being set.
