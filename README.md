@@ -4,6 +4,9 @@ crest
 
 Doing for REST APIs what curl did for URLs.
 
+So far, just the spec is written, but I'm eager to have this tool,
+therefore I'm eager to get it all done and built.
+
 
 Description
 -----------
