@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+
+import argparse
+
+parser = argparse.ArgumentParser(description="An interactive hypermedia shell on top of curl")
+parser.add_argument('-a, --accept', metavar='TYPE', default='Accept: application/json', help='Set the default Accept: HTTP header. (defaults to \'application/json\')')
+
+parser.print_help()
+#parser.add_argument('base_url', metavar='<base_url>', type=
+
+
