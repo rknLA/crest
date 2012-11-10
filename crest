@@ -2,8 +2,26 @@
 
 import argparse
 
+secure = False
+
+def set_secure(val):
+  secure = True if val else False
+
 parser = argparse.ArgumentParser(description="An interactive hypermedia shell on top of curl")
-parser.add_argument('-a, --accept', metavar='TYPE', default='Accept: application/json', help='Set the default Accept: HTTP header. (defaults to \'application/json\')')
+
+parser.add_argument('-a', '--accept',
+    metavar='TYPE',
+    help='Set the default Accept header. (defaults to \'application/json\')',
+    default='application/json')
+
+parser.add_argument('-s', '--secure', 
+    help='Use https',
+    action='store_const',
+    const='opt_secure_flag')
+
+parser.add_argument('-t', '--content-type', metavar='TYPE',
+    help='Set the default Content-Type header. Defaults to application/x-www-urlencoded',
+    default='application/x-www-urlencoded')
 
 parser.print_help()
 #parser.add_argument('base_url', metavar='<base_url>', type=
