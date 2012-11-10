@@ -75,7 +75,7 @@ One day soon, Oauth and Oauth2 may also be supported using `--ouath` and/or
 `--oauth2`.
 
 ### Basic Commands ###
-`crest` is sort of like a `curl` shell, and as such, it has a set of params
+crest is sort of like a curl shell, and as such, it has a set of options
 you can use once you've initialized the shell with a root url.
 
 `set` is used to set an option from the options list above, as in `set -s` or
@@ -83,15 +83,17 @@ you can use once you've initialized the shell with a root url.
 
 `unset` is used to unset an option from the option list.  Note that if you have
 multiple headers set, `unset -H` will unset all of them.
+
 Use `unset -H Header-Name` to unset only a specific header.
 
 Use HTTP verbs to issue curl requests:
 
 `GET /users` 
+
 `POST /comment -d 'What a silly username!'`
 
-Remember, `crest` is a thin layer over `curl`, so if the verb is supported by
-the -X option in `curl`, it's probably supported in `crest`
+Remember, crest is a thin layer over curl, so if the verb is supported by
+the -X option in curl, it's probably supported in crest.
 
 
 ### History ###
@@ -109,7 +111,7 @@ session.  The resent request will be appended to the history list.
 
 ### Retention ###
 
-`crest` doesn't have any inherent retention, but it does have an output mechanism.
+crest doesn't have any inherent retention, but it does have an output mechanism.
 
 Use `dump <filename>` from the shell to write a log of your session to that file.
 If you don't want to dump the whole session, `dump` supports an option `-r` to
