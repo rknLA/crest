@@ -123,10 +123,7 @@ History is not retained between sessions.
 Testing
 -------
 
-Run:
-```bash
-python -m unittest discover test '*_test.py'
-```
-
+The script at `./test` will run all of the files in the `./tests` directory that
+have a filename of `*_test.py`.
 
 

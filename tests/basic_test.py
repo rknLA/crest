@@ -1,4 +1,5 @@
 import unittest
+import libcrest as crest
 
 class TestCrestInitialization(unittest.TestCase):
 
