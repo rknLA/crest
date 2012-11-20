@@ -120,5 +120,13 @@ specify a single request to output to a file, as in `dump -r 3 ~/output.json`
 History is not retained between sessions.
 
 
+Testing
+-------
+
+Run:
+```bash
+python -m unittest discover test '*_test.py'
+```
+
 
 
