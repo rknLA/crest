@@ -1,21 +1,12 @@
 import unittest
 from subprocess import Popen, PIPE
-from server import Server as TestServer
+from libcrest.Session import CrestSession
 
 class CrestTestHelper(unittest.TestCase):
   def curl(self, curl_str):
-    command = 'curl ' + curl_str
-    print 'executing command:'
-    print command
-    output = Popen(command, stdout=PIPE, shell=True).communicate()[0]
-    return output
+    command = 'curl -s ' + curl_str
+    output = Popen(command, stdout=PIPE, stderr=PIPE, shell=True).communicate()
+    return output[0]
 
-#  def setUp(self):
-#   # start server
-#   if not hasattr(self,'server'):
-#     self.server = TestServer()
-
-#   self.server.start()
-
-# def tearDown(self):
-#   self.server.stop()
+  def setUp(self):
+    self.crest = CrestSession('localhost:3334')

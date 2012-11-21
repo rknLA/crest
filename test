@@ -1,8 +1,9 @@
 #!/bin/bash
 
-node tests/server/server.js &
-SERVER_PID=$!
-
+if ! type "forever" > /dev/null; then
+  echo "Running the tests requires `forever` to be installed.\nUse `npm install -g forever` to install it."
+  exit 1
+fi
+forever start tests/server/server.js
 python -m unittest discover tests '*_test.py'
-
-kill $SERVER_PID
+forever stop tests/server/server.js

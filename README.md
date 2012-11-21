@@ -127,5 +127,5 @@ The script at `./test` will run all of the files in the `./tests` directory that
 have a filename of `*_test.py`.
 
 Running the tests will spin up a nodejs webserver on localhost:3334 for offline
-testing and guaranteed repeatability.  As such, node must be installed to run the
-tests.
+testing and guaranteed repeatability.  As such, node, npm, and forever must be
+installed to run the tests.
