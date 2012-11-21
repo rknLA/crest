@@ -14,3 +14,8 @@ class CrestSession:
     self.default['data'] = data if data else {}
 
     self.history = []
+
+
+  def send(self, command):
+    print "CrestSession.send"
+    print command
