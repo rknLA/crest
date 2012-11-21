@@ -13,7 +13,7 @@ class TestCrestInitialization(unittest.TestCase):
 
   def test_initialization_without_url(self):
     with self.assertRaises(TypeError):
-      instance = CrestSession() # this should fail.
+      instance = CrestSession()
 
   def test_initialize_with_accept(self):
     instance = CrestSession('api.github.com', 'application/xml')

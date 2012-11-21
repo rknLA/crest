@@ -14,4 +14,3 @@ class CrestSession:
     self.default['data'] = data if data else {}
 
     self.history = []
-
