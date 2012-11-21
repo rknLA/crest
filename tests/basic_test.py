@@ -25,3 +25,14 @@ class TestCrestInitialization(unittest.TestCase):
     self.assertListEqual(instance.default['headers'],
                          [ "Content-Type: application/json" ])
 
+  def test_initialize_with_headers_array(self):
+    instance = CrestSession('api.github.com',
+        headers = [ 'Content-Type: application/json',
+                    'X-Auth-Key: 1234' ])
+    self.assertListEqual(instance.default['headers'],
+                         [ 'Content-Type: application/json',
+                           'X-Auth-Key: 1234' ])
+
+  def test_history_after_initialization(self):
+    instance = CrestSession('api.github.com')
+    self.assertEqual(instance.history, [])

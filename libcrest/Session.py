@@ -12,3 +12,6 @@ class CrestSession:
     else:
       self.default['headers'] = []
     self.default['data'] = data if data else {}
+
+    self.history = []
+
